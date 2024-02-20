@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet"  />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/hover-min.css" rel="stylesheet" />
+     <script src="js/jquery.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+      function getcaptcha()
+      {
+        var strArr="0123456789ABCDtyuHJGr";
+        var code="";
+        for(var i=0;i<5;i++)
+        {
+           code=code+strArr[Math.floor(Math.random()*21)];
+        }
+        return code;
+      }
+      function demo()
+      {
+        var c=getcaptcha();
+        document.getElementById("ct1").innerHTML=c;
+        document.getElementById("hdn1").value=c;
+      }
+      window.onload=demo;
+             
+                  $(document).ready(function(){
+                      alert("ok")
+                   $("body").on("copy",function(e){
+                     alert("copy not allowed");
+                     e.preventDefault();
+                   });
+                  
+                  $("body").on("cut",function(e){
+                     alert("cut not allowed");
+                     e.preventDefault();
+                   });
+                
+                  $("body").on("paste",function(e){
+                     alert("paste not allowed");
+                     e.preventDefault();
+                   });
+                      $("body").bind("contextmenu",function(e){
+                     alert("right click not allowed")
+                     return false;
+                   });
+                  });
+      </script>
+</head>
+<body>
+    <section id="header">
+        <a href ="#"><img src="img/logo.png" class="logo" alt=""></a>
+        <div>
+          <ul id="navbar">
+            <li> <a  class="active" href="index.html">Home</a></li>
+            <li> <a href="shop.html">Shop</a></li>
+            <li> <a href="blog.html">Blog</a></li>
+            <li> <a  href="about.html">About</a></li>
+            <li> <a href="contact.html">Contact</a></li>
+            <li  id="5r"> <a  href="cart.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+            <a href="#" id="close"><i class="fa fa-times"></i></a>
+          </ul>
+        </div>
+        <div id="mobile">
+          <a href="cart.html"><i class="fa fa-shopping-bag"></i></a>
+          <i id="bar" class="fa fa-outdent"></i>
+    
+        </div>
+    </section>
+
+<!--  Registration Form -->
+<div class="row" style="background-size:100% 100%;margin-top: -1.5%;
+             min-height:650px;background-image:url(/img/1.jpg);">
+		  <div class="col-sm-2"></div>
+		  <div class="col-sm-8" style="margin-top:30px;">
+          <div class="com-sm-12" style="color:white;height:50px;text-align:center;font-weight:bold;
+		   font-size:30px;line-height:50px;font-family:algerian">REGISTRATION</div>		  
+           <form action="myreg" method="post" enctype="multipart/form-data" style="color:white;background:rgba(1.5,0.5,0.5,0.34);min-height:570px;">
+           <div class="col-sm-6"> 
+           Name
+          <input type="text" name="name" class="form-control" placeholder="Enter Name"  required="required"/><br>
+           Father Name
+          <input type="text" name="name" class="form-control" placeholder="Enter Father Name"  required="required"/><br>
+		   Gender:
+		   <input type="radio" name="gender" value="Male"/>Male
+            <input type="radio" name="gender" value="Female"/>Female<br><br>
+			Qualification
+			<select name="quali" class="form-control">
+			<option>Select Qualification</option>
+			     <option>MCA</option>
+                 <option>PHD</option>
+			     <option>MTECH</option>
+			     <option>BTECH</option>
+			     <option>DIPLOMA</option>
+			     <option>ITI</option>
+			</select><br>
+			Mobile Number
+			<input type="number" name="mob" class="form-control" placeholder="Enter Your Mobile Number"/><br>
+			Address
+			<input type="text" name="add" class="form-control" placeholder="Enter Your Address"/>
+		   </div>
+		   <div class="col-sm-6">
+		   Email-Id
+		   <input type="email" name="email" class="form-control" placeholder="Enter Your Email"/><br>
+		   Password
+		   <input type="password" name="password" class="form-control" placeholder="Enter Your Password"/><br>
+		   Profile Picture
+		   <input type="file" class="form-control" name="profile"/><br>
+		   <select name="city" class="form-control">
+		          <option>Select City</option>
+		          <option>Lucknow</option>
+		          <option>Delhi</option>
+		          <option>Ballia</option>
+		          <option>Mumbai</option>
+		          <option>Barabanki</option>
+		          <option>Hardoi</option>
+		   </select><br>
+		   Captcha Code
+		   <span style="color:red;font-size:25px;font-family:cursive;margin-left:30px;">
+		   <strike id="ct1">dfs3a</strike></span> 
+		   <span class="fa fa-refresh" tittle="Click Here To Refresh Captcha" style="font-size:30px;margin-left:0px;
+		   cursor:pointer" onclick="demo()"></span>
+           <input type="hidden" name="hdn1" id="hdn1"/>
+           <br>		   
+		   Enter Above Captcha Code
+		   <input type="text" class="form-control" name="cc1" placeholder="Enter Captcha Code"/>
+		   </div>
+		   
+           <input type="submit" class="btn btn-success" value="Register Now" style="margin-left:50%"/>
+		   </form>
+		   </div>
+      </div>
+
+<!--  Registration Form End-->
+
+<!--  Newsletter Section Start  -->
+  <section id="newsletter" class="section-p1 section-m1">
+    <div class="newstext">
+      <h4>Sign Up For Newletters</h4>
+      <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
+    </div>
+    <div class="form">
+      <input type="text" placeholder="Your email address">
+      <button class="normal">Sign Up</button>
+    </div>
+  </section>
+<!--  Newsletter Section End-->
+
+<!--  Footer Start  -->
+<footer class="section-p1">
+    <div class="col">
+      <img class="logo" src="/img/logo.png" alt="">
+      <h4>Contact</h4>
+      <p><strong>Address:</strong>562 Welligton Road, Street 32, San Francisco</p>
+      <p><strong>Phone:</strong>+01 2222 365/ (+91) 01 2345 6789</p>
+      <p><strong>Hours:</strong>10:00 - 18:00, Mon - Sat </p>
+      <div class="follow">
+        <h4>Follows us</h4>
+        <div class="icon">
+          <a href="https://instagram.com/alwayss_looser?igshid=MzNlNGNkZWQ4Mg==" class="fa fa-instagram" aria-hidden="true"></a>
+          <a href="https://www.facebook.com/profile.php?id=100036049292842" class="fa fa-facebook-f" aria-hidden="true"></a>
+          <a href="https://www.linkedin.com/in/aaditya-kasaudhan-4120b5241" class="fa fa-linkedin" aria-hidden="true"></a>
+          <a href="https://auth.geeksforgeeks.org/user/adityakas1907" class="fa fa-link" aria-hidden="true"></a>
+          <a href="https://leetcode.com/aditya_0_kasaudhan" class="fa fa-link" aria-hidden="true"></a>
+      </div>
+      </div>
+    </div>
+    <div class="col">
+      <h4>About</h4>
+      <a href="#">About us</a>
+      <a href="#">Delivery Information</a>
+      <a href="#">Primary Policy</a>
+      <a href="#">Terms & Condition</a>
+      <a href="#">Contact Us</a>
+    </div>
+  
+    <div class="col">
+      <h4>My Account</h4>
+      <a href="#">Sign In</a>
+      <a href="#">View Cart</a>
+      <a href="#">My Wishlist</a>
+      <a href="#">Track My Order</a>
+      <a href="#">Help</a>
+    </div>
+  
+    <div class="col install">
+      <h4>Install App</h4>
+      <p>From App Store or Google Play</p>
+      <div class="row">
+        <img src="img/pay/app.jpg">
+        <img src="img/pay/play.jpg">
+      </div>
+      <p>Secured Payment Gateways</p>
+      <img src="img/pay/pay.png">
+    </div>
+    <div class="copyright">
+      <p>Designed and Developed by <strong>Er. Aditya Kasaudhan</strong></p>
+    </div>
+</footer>
+  
+<!--  Footer End  -->
+
+<script src="script.js"></script>   
+</body>
+</html>
